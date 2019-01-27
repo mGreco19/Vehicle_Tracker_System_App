@@ -31,6 +31,7 @@ $ git clone https://github.com/NanaOva/webManager.git
 ### Tecnologias
 <img src="http://eduinfinity.in/wp-content/uploads/2018/07/javascript.png" alt="drawing" width="110"/> <img src="https://pngimg.com/uploads/php/php_PNG3.png" alt="drawing" width="110"/> <img src="https://blog.irontec.com/wp-content/uploads/2016/01/apache.png" alt="drawing" width="110"/> <img src="https://toppng.com/public/uploads/preview/mysql-logo-11536003912o2fjzalzdb.png" alt="drawing" width="110"/>
 
+
 ## Authors
 Didier José Ocampos Martínez.<br>
 Anthony Ramírez lópez.<br>
