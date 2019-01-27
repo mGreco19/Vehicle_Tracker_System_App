@@ -29,6 +29,7 @@ Para clonar el repositorio:
 $ git clone https://github.com/NanaOva/webManager.git
 
 ### Tecnologias
+<img src="https://www.google.com/search?q=php&client=firefox-b-ab&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiW8_X6ho_gAhUHS60KHUmpAGUQ_AUIDigB&biw=1377&bih=826" alt="drawing" width="110"/>
 
 
 ## Authors
