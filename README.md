@@ -26,7 +26,7 @@ Se tienen 2 branches(ramas) principales pruebas para modificar y controlar los m
 
 Para clonar el repositorio: 
 
-$ git clone 
+$ git clone https://github.com/joseocampo/Vehicle_Tracker_System_App.git
 
 ### Tecnologias
 <img src="http://eduinfinity.in/wp-content/uploads/2018/07/javascript.png" alt="drawing" width="110"/> <img src="https://pngimg.com/uploads/php/php_PNG3.png" alt="drawing" width="110"/> <img src="https://blog.irontec.com/wp-content/uploads/2016/01/apache.png" alt="drawing" width="110"/> <img src="https://toppng.com/public/uploads/preview/mysql-logo-11536003912o2fjzalzdb.png" alt="drawing" width="110"/>
