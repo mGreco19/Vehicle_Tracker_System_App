@@ -19,6 +19,7 @@
         </activity>
         <activity
             android:name=".PantallaPrincipal"
+            android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_pantalla_principal"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
