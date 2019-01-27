@@ -29,8 +29,7 @@ Para clonar el repositorio:
 $ git clone https://github.com/NanaOva/webManager.git
 
 ### Tecnologias
-<img src="https://www.google.com/search?q=php&client=firefox-b-ab&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiW8_X6ho_gAhUHS60KHUmpAGUQ_AUIDigB&biw=1377&bih=826" alt="drawing" width="110"/>
-
+<img src="http://eduinfinity.in/wp-content/uploads/2018/07/javascript.png" alt="drawing" width="110"/> <img src="https://pngimg.com/uploads/php/php_PNG3.png" alt="drawing" width="110"/> <img src="https://blog.irontec.com/wp-content/uploads/2016/01/apache.png" alt="drawing" width="110"/> <img src="https://toppng.com/public/uploads/preview/mysql-logo-11536003912o2fjzalzdb.png" alt="drawing" width="110"/>
 
 ## Authors
 Didier José Ocampos Martínez.<br>
