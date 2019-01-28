@@ -30,7 +30,7 @@ $ git clone https://github.com/joseocampo/Vehicle_Tracker_System_App.git
 
 ### Tecnologias
 ![Android Studio](https://www.macupdate.com/images/icons256/51370.png)
- <img src="https://pngimg.com/uploads/php/php_PNG3.png" alt="drawing" width="110"/> <img src="https://blog.irontec.com/wp-content/uploads/2016/01/apache.png" alt="drawing" width="110"/> <img src="https://toppng.com/public/uploads/preview/mysql-logo-11536003912o2fjzalzdb.png" alt="drawing" width="110"/>
+ <img src="https://pngimg.com/uploads/php/php_PNG3.png" alt="drawing" width="110"/> <img src="https://blog.irontec.com/wp-content/uploads/2016/01/apache.png" alt="drawing" width="110"/> <img src="https://toppng.com/public/uploads/preview/mysql-logo-11536003912o2fjzalzdb.png" alt="drawing" width="110"/> <img src="https://cdn.portableapps.com/XAMPP_128.png" alt="drawing" width="110"/>
 
 
 ## Authors
