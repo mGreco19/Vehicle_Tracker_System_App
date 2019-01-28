@@ -54,7 +54,7 @@ public class FragmentSolicitarVhiculo extends Fragment
 
     //este es un comentario de prueba para hacer commit.
     private EditText campoDestino,campoJustificacion;
-    private Button btnRealizarSolicitd, btnSelectHour;
+    private Button btnRealizarSolicitd, btnSelectbeginHour,btnSelectEndHour;
     private TextView userRequest,vehicleRequest,targetRequest,dateTimerequest;
 
     private Spinner lista;
@@ -66,7 +66,8 @@ public class FragmentSolicitarVhiculo extends Fragment
     private RequestQueue request;
 
     //variables para guardar la hora
-    private int hour,minutes;
+    private int beginHour,beginMinutes,endHour,endMinutes;
+    private String vehiclePlate;
 
     public FragmentSolicitarVhiculo() {
         // Required empty public constructor
@@ -106,7 +107,9 @@ public class FragmentSolicitarVhiculo extends Fragment
         View vista = inflater.inflate(R.layout.fragment_fragment_solicitar_vhiculo, container, false);
 
         //obtenemos el botoon para seleccionar la hora
-        btnSelectHour = (Button)vista.findViewById(R.id.btnSelectHour);
+        btnSelectbeginHour = (Button)vista.findViewById(R.id.btnBeginHour);
+        btnSelectEndHour = (Button)vista.findViewById(R.id.btnEndHour);
+
 
         lista = (Spinner) vista.findViewById(R.id.vehicleList);
         campoDestino = (EditText)vista.findViewById(R.id.campoDestino);
@@ -136,19 +139,40 @@ public class FragmentSolicitarVhiculo extends Fragment
                 cargarWebService();
             }
         });
-        btnSelectHour.setOnClickListener(new View.OnClickListener() {
+        btnSelectbeginHour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 final Calendar calendar = Calendar.getInstance();
-                hour = calendar.get(Calendar.HOUR_OF_DAY);
-                minutes = calendar.get(Calendar.MINUTE);
+                beginHour = calendar.get(Calendar.HOUR_OF_DAY);
+                beginMinutes = calendar.get(Calendar.MINUTE);
                 TimePickerDialog timePickerDialog = new TimePickerDialog(getContext(), new TimePickerDialog.OnTimeSetListener() {
                     @Override
-                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                        btnSelectHour.setText("Hora:  "+hourOfDay+": "+minute);
-                        hour=hourOfDay;
+                    public void onTimeSet(TimePicker view, int beginHourOfDay, int minute) {
+                        btnSelectbeginHour.setText("Hora inicial:  "+beginHourOfDay+": "+minute);
+                        beginHour=beginHourOfDay;
+                        endMinutes=minute;
                     }
-                },hour,minutes,false);
+                },beginHour,beginMinutes,false);
+
+                //mostramos el selector de la hora
+                timePickerDialog.show();
+
+            }
+        });
+        btnSelectEndHour.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Calendar calendar = Calendar.getInstance();
+                beginHour = calendar.get(Calendar.HOUR_OF_DAY);
+                beginMinutes = calendar.get(Calendar.MINUTE);
+                TimePickerDialog timePickerDialog = new TimePickerDialog(getContext(), new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker view, int beginHourOfDay, int minute) {
+                        btnSelectEndHour.setText("Hora final:  "+beginHourOfDay+": "+minute);
+                        endHour=beginHourOfDay;
+                        endMinutes=minute;
+                    }
+                },beginHour,beginMinutes,false);
 
                 //mostramos el selector de la hora
                 timePickerDialog.show();
@@ -165,10 +189,10 @@ public class FragmentSolicitarVhiculo extends Fragment
         userRequest.setText("Usuario:  Jose Ocampo");
         vehicleRequest.setText("Vehículo: "+lista.getSelectedItem().toString());
         targetRequest.setText("Destino: "+campoDestino.getText().toString());
-        if(hour<12){
-            dateTimerequest.setText("Fecha: "+"26/01/2019  -  "+btnSelectHour.getText().toString()+" am");
+        if(beginHour<12){
+            dateTimerequest.setText("Fecha: "+"26/01/2019  -  "+btnSelectbeginHour.getText().toString()+" am");
         }else{
-            dateTimerequest.setText("Fecha: "+"26/01/2019  -  "+btnSelectHour.getText().toString()+" pm");
+            dateTimerequest.setText("Fecha: "+"26/01/2019  -  "+btnSelectbeginHour.getText().toString()+" pm");
         }
 
 
@@ -176,7 +200,7 @@ public class FragmentSolicitarVhiculo extends Fragment
 
     }
     public void loadVehicles(){
-        String url = "http://192.168.0.10/vts/loadVehicles.php?" + "user=drocampo";
+        String url = "http://192.168.0.10/conexionPHPBD/loadVehicles.php?" + "user=drocampo";
 
         //esto hace que permita ingresar los datos con espacios, ejemplo: Didier Jose
         url.replace(" ", "%20");

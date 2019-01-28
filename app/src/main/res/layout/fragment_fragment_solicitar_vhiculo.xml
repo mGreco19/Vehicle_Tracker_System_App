@@ -68,7 +68,19 @@
                 tools:targetApi="o" />
 
             <Button
-                android:id="@+id/btnSelectHour"
+                android:id="@+id/btnBeginHour"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:background="@android:color/background_light"
+                android:gravity="left"
+                android:padding="6dp"
+                android:text="@string/seleccionar_hora_inicio"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btnEndHour"
                 android:layout_width="match_parent"
                 android:layout_height="36dp"
                 android:layout_marginTop="4dp"
@@ -76,7 +88,7 @@
                 android:background="@android:color/background_light"
                 android:gravity="left"
                 android:padding="6dp"
-                android:text="@string/seleccionar_hora"
+                android:text="@string/selecionar_hora_final"
                 android:textAllCaps="false" />
 
             <Button

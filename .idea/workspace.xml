@@ -23,9 +23,14 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/joseocampo/VehicleTrackerSystemApp/com/FragmentSolicitarVhiculo.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/joseocampo/VehicleTrackerSystemApp/com/FragmentSolicitarVhiculo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/joseocampo/VehicleTrackerSystemApp/com/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/joseocampo/VehicleTrackerSystemApp/com/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_fragment_solicitar_vhiculo.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_fragment_solicitar_vhiculo.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -51,42 +56,29 @@
       <file leaf-file-name="PantallaPrincipal.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/joseocampo/VehicleTrackerSystemApp/com/PantallaPrincipal.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
+            <state relative-caret-position="22">
               <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FragmentSolicitarVhiculo.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="FragmentSolicitarVhiculo.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/joseocampo/VehicleTrackerSystemApp/com/FragmentSolicitarVhiculo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="148" column="39" selection-start-line="148" selection-start-column="39" selection-end-line="148" selection-end-column="39" />
+            <state relative-caret-position="286">
+              <caret line="139" column="13" selection-start-line="139" selection-start-column="13" selection-end-line="139" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#FragmentSolicitarVhiculo#0;class#FragmentSolicitarVhiculo#0" />
-                <element signature="docComment;method#newInstance#0;class#FragmentSolicitarVhiculo#0" />
-                <element signature="method#newInstance#0;class#FragmentSolicitarVhiculo#0" />
-                <element signature="method#onCreate#0;class#FragmentSolicitarVhiculo#0" />
+                <element signature="e#5262#5499#0" expanded="true" />
+                <element signature="e#5548#6414#0" expanded="true" />
+                <element signature="e#5920#6265#0" expanded="true" />
+                <element signature="e#6264#6265#0" expanded="true" />
+                <element signature="e#6413#6414#0" expanded="true" />
+                <element signature="e#6463#7329#0" expanded="true" />
+                <element signature="e#6835#7180#0" expanded="true" />
+                <element signature="e#7179#7180#0" expanded="true" />
+                <element signature="e#7328#7329#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TimePickerDialog.java" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-28/android/app/TimePickerDialog.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="79" column="66" selection-start-line="79" selection-start-column="54" selection-end-line="79" selection-end-column="66" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="506">
-              <caret line="23" column="47" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -95,7 +87,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_fragment_solicitar_vhiculo.xml">
           <provider editor-type-id="text-editor">
             <state relative-caret-position="2948">
-              <caret line="134" column="27" selection-start-line="134" selection-start-column="27" selection-end-line="134" selection-end-column="27" />
+              <caret line="146" column="27" selection-start-line="146" selection-start-column="27" selection-end-line="146" selection-end-column="27" />
             </state>
           </provider>
           <provider selected="true" editor-type-id="android-designer2">
@@ -118,8 +110,8 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/joseocampo/VehicleTrackerSystemApp/com/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="76" column="21" selection-start-line="76" selection-start-column="21" selection-end-line="76" selection-end-column="21" />
+            <state relative-caret-position="748">
+              <caret line="51" column="55" selection-start-line="51" selection-start-column="55" selection-end-line="51" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -127,18 +119,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
           <provider editor-type-id="android-manifest">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="21" column="73" selection-start-line="21" selection-start-column="73" selection-end-line="21" selection-end-column="73" />
-              <folding>
-                <element signature="e#346#364#0" expanded="true" />
-                <element signature="e#931#974#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="176">
+              <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -148,9 +136,11 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>txtPassword</find>
+      <find>minutes</find>
     </findStrings>
     <replaceStrings>
       <replace>txtUser</replace>
+      <replace>beginMinutes</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -2421,11 +2411,11 @@
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/nav_header_pantalla_principal.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/joseocampo/VehicleTrackerSystemApp/com/PantallaPrincipal.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/joseocampo/VehicleTrackerSystemApp/com/FragmentSolicitarVhiculo.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_fragment_solicitar_vhiculo.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/joseocampo/VehicleTrackerSystemApp/com/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_fragment_solicitar_vhiculo.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/joseocampo/VehicleTrackerSystemApp/com/FragmentSolicitarVhiculo.java" />
       </list>
     </option>
   </component>
@@ -2660,7 +2650,7 @@
       <window_info id="Captures" order="4" weight="0.25" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24906227" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.24906227" />
       <window_info anchor="bottom" id="Build" order="7" weight="0.32904884" />
       <window_info anchor="right" id="Gradle" order="6" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -2700,10 +2690,15 @@
           <caret line="148" column="39" selection-start-line="148" selection-start-column="39" selection-end-line="148" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#FragmentSolicitarVhiculo#0;class#FragmentSolicitarVhiculo#0" />
-            <element signature="docComment;method#newInstance#0;class#FragmentSolicitarVhiculo#0" />
-            <element signature="method#newInstance#0;class#FragmentSolicitarVhiculo#0" />
-            <element signature="method#onCreate#0;class#FragmentSolicitarVhiculo#0" />
+            <element signature="e#5262#5499#0" expanded="true" />
+            <element signature="e#5548#6414#0" expanded="true" />
+            <element signature="e#5920#6265#0" expanded="true" />
+            <element signature="e#6264#6265#0" expanded="true" />
+            <element signature="e#6413#6414#0" expanded="true" />
+            <element signature="e#6463#7329#0" expanded="true" />
+            <element signature="e#6835#7180#0" expanded="true" />
+            <element signature="e#7179#7180#0" expanded="true" />
+            <element signature="e#7328#7329#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2765,10 +2760,15 @@
           <caret line="148" column="39" selection-start-line="148" selection-start-column="39" selection-end-line="148" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#FragmentSolicitarVhiculo#0;class#FragmentSolicitarVhiculo#0" />
-            <element signature="docComment;method#newInstance#0;class#FragmentSolicitarVhiculo#0" />
-            <element signature="method#newInstance#0;class#FragmentSolicitarVhiculo#0" />
-            <element signature="method#onCreate#0;class#FragmentSolicitarVhiculo#0" />
+            <element signature="e#5262#5499#0" expanded="true" />
+            <element signature="e#5548#6414#0" expanded="true" />
+            <element signature="e#5920#6265#0" expanded="true" />
+            <element signature="e#6264#6265#0" expanded="true" />
+            <element signature="e#6413#6414#0" expanded="true" />
+            <element signature="e#6463#7329#0" expanded="true" />
+            <element signature="e#6835#7180#0" expanded="true" />
+            <element signature="e#7179#7180#0" expanded="true" />
+            <element signature="e#7328#7329#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3030,13 +3030,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/joseocampo/VehicleTrackerSystemApp/com/PantallaPrincipal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
@@ -3054,27 +3047,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_fragment_solicitar_vhiculo.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="2948">
-          <caret line="134" column="27" selection-start-line="134" selection-start-column="27" selection-end-line="134" selection-end-column="27" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/joseocampo/VehicleTrackerSystemApp/com/FragmentSolicitarVhiculo.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/joseocampo/VehicleTrackerSystemApp/com/PantallaPrincipal.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="148" column="39" selection-start-line="148" selection-start-column="39" selection-end-line="148" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#FragmentSolicitarVhiculo#0;class#FragmentSolicitarVhiculo#0" />
-            <element signature="docComment;method#newInstance#0;class#FragmentSolicitarVhiculo#0" />
-            <element signature="method#newInstance#0;class#FragmentSolicitarVhiculo#0" />
-            <element signature="method#onCreate#0;class#FragmentSolicitarVhiculo#0" />
-          </folding>
+        <state relative-caret-position="22">
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -3087,8 +3063,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/joseocampo/VehicleTrackerSystemApp/com/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="76" column="21" selection-start-line="76" selection-start-column="21" selection-end-line="76" selection-end-column="21" />
+        <state relative-caret-position="748">
+          <caret line="51" column="55" selection-start-line="51" selection-start-column="55" selection-end-line="51" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -3100,11 +3076,36 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="21" column="73" selection-start-line="21" selection-start-column="73" selection-end-line="21" selection-end-column="73" />
+        <state relative-caret-position="176">
+          <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_fragment_solicitar_vhiculo.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="2948">
+          <caret line="146" column="27" selection-start-line="146" selection-start-column="27" selection-end-line="146" selection-end-column="27" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/joseocampo/VehicleTrackerSystemApp/com/FragmentSolicitarVhiculo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="139" column="13" selection-start-line="139" selection-start-column="13" selection-end-line="139" selection-end-column="13" />
           <folding>
-            <element signature="e#346#364#0" expanded="true" />
-            <element signature="e#931#974#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#5262#5499#0" expanded="true" />
+            <element signature="e#5548#6414#0" expanded="true" />
+            <element signature="e#5920#6265#0" expanded="true" />
+            <element signature="e#6264#6265#0" expanded="true" />
+            <element signature="e#6413#6414#0" expanded="true" />
+            <element signature="e#6463#7329#0" expanded="true" />
+            <element signature="e#6835#7180#0" expanded="true" />
+            <element signature="e#7179#7180#0" expanded="true" />
+            <element signature="e#7328#7329#0" expanded="true" />
           </folding>
         </state>
       </provider>

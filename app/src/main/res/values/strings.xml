@@ -22,4 +22,6 @@
     <string name="ingrese_su_contrase_a">Ingrese su contraseña</string>
     <string name="estado_de_la_solicitud">Estado de la solicitud</string>
     <string name="seleccionar_hora">Seleccionar Hora</string>
+    <string name="selecionar_hora_final">Selecionar hora final</string>
+    <string name="seleccionar_hora_inicio">Seleccionar hora inicio</string>
 </resources>
