@@ -69,6 +69,10 @@ public class FragmentSolicitarVhiculo extends Fragment
     private int beginHour,beginMinutes,endHour,endMinutes;
     private String vehiclePlate;
 
+    //en este atributo se guarda el nombre del usuario logeado
+    private String userNameLogin;
+
+
     public FragmentSolicitarVhiculo() {
         // Required empty public constructor
     }
@@ -98,6 +102,8 @@ public class FragmentSolicitarVhiculo extends Fragment
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+
     }
 
     @Override
@@ -123,6 +129,13 @@ public class FragmentSolicitarVhiculo extends Fragment
         dateTimerequest = (TextView)vista.findViewById(R.id.dateTimeRequest);
 
 
+
+        //obtenemos el nombre del usaurio logeado
+        userNameLogin = getArguments().getString("usuario");
+        Toast.makeText(getContext(),"LISTO PERRO: "+userNameLogin,Toast.LENGTH_LONG).show();
+
+
+
         // colocamos este texto para indicar que la solicitud esta vacia porque no se ha solicitado ningun vehiculo.
         userRequest.setText("       -- ningún vehículo solicitado --");
 
@@ -131,6 +144,8 @@ public class FragmentSolicitarVhiculo extends Fragment
         loadVehicles();
 
 
+
+        //colocamos todos los click listeners...
 
         btnRealizarSolicitd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -179,6 +194,10 @@ public class FragmentSolicitarVhiculo extends Fragment
 
             }
         });
+
+
+
+
 
         return vista;
     }

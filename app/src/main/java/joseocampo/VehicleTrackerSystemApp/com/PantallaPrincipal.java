@@ -16,12 +16,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class PantallaPrincipal extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
         FragmentSolicitarVhiculo.OnFragmentInteractionListener {
 
     private TextView txtUserName;
+    private String userName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,15 +53,19 @@ public class PantallaPrincipal extends AppCompatActivity
 
 
         //colocamos el userName en la pantalla principal
-        txtUserName = (TextView)findViewById(R.id.txtUserName);
+
         //txtUserName.setText("hola");
 
-      //  Intent intent = getIntent();
-      //  Bundle extras = intent.getExtras();
-      //  if(extras!=null){
-       //     String userName = (String)extras.get("userName");
-       //     txtUserName.setText(userName);
-       // }
+
+        Bundle extras = getIntent().getExtras();
+        if(extras!=null){
+            userName = extras.getString("puto");
+            Toast.makeText(this,"Hola: "+userName,Toast.LENGTH_LONG).show();
+
+
+        }
+
+
     }
 
     @Override
@@ -103,7 +109,10 @@ public class PantallaPrincipal extends AppCompatActivity
         boolean fragmentoSeleccionado = false;
 
         if (id == R.id.solicitudVehiculo) {
+            Bundle bundle = new Bundle();
+            bundle.putString("usuario",userName);
             fragmento = new FragmentSolicitarVhiculo();
+            fragmento.setArguments(bundle);
             fragmentoSeleccionado=true;
 
         } else if (id == R.id.reporteAveria) {

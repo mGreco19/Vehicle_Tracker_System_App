@@ -74,12 +74,10 @@ public class MainActivity extends AppCompatActivity implements Response.Listener
             if (response.getString("User") != null) {
 
                 Intent intent = new Intent(this, PantallaPrincipal.class);
-                try {
-                    //colocamos un extra para el activity pantalla inicial para mostrar el nombre del usuario
-                    intent.putExtra("userName",response.getString("User"));
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
+
+                intent.putExtra("puto",response.getString("User"));
+
+
                 Toast.makeText(this, "Ha iniciado sesión con éxito!", Toast.LENGTH_LONG).show();
                 startActivity(intent);
 
