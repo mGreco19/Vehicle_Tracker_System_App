@@ -164,8 +164,8 @@ public class FragmentSolicitarVhiculo extends Fragment
                     @Override
                     public void onTimeSet(TimePicker view, int beginHourOfDay, int minute) {
                         btnSelectbeginHour.setText("Hora inicial:  "+beginHourOfDay+": "+minute);
-                        beginHour=beginHourOfDay;
-                        endMinutes=minute;
+                        beginHour = beginHourOfDay;
+                        beginMinutes = minute;
                     }
                 },beginHour,beginMinutes,false);
 
@@ -178,16 +178,16 @@ public class FragmentSolicitarVhiculo extends Fragment
             @Override
             public void onClick(View v) {
                 final Calendar calendar = Calendar.getInstance();
-                beginHour = calendar.get(Calendar.HOUR_OF_DAY);
-                beginMinutes = calendar.get(Calendar.MINUTE);
+                endHour = calendar.get(Calendar.HOUR_OF_DAY);
+                endMinutes = calendar.get(Calendar.MINUTE);
                 TimePickerDialog timePickerDialog = new TimePickerDialog(getContext(), new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker view, int beginHourOfDay, int minute) {
                         btnSelectEndHour.setText("Hora final:  "+beginHourOfDay+": "+minute);
-                        endHour=beginHourOfDay;
-                        endMinutes=minute;
+                        endHour = beginHourOfDay;
+                        endMinutes = minute;
                     }
-                },beginHour,beginMinutes,false);
+                },endHour,endMinutes,false);
 
                 //mostramos el selector de la hora
                 timePickerDialog.show();
@@ -223,6 +223,9 @@ public class FragmentSolicitarVhiculo extends Fragment
         vehicleRequest.setText("Vehículo: "+lista.getSelectedItem().toString());
         targetRequest.setText("Destino: "+campoDestino.getText().toString());
 
+        Toast.makeText(getContext(),"CEDULA: "+ userNameLogin,Toast.LENGTH_LONG).show();
+        Toast.makeText(getContext(),"Inicio: "+ beginHour+":"+beginMinutes+":00",Toast.LENGTH_LONG).show();
+        Toast.makeText(getContext(),"Final: "+ endHour+":"+ endMinutes+":00",Toast.LENGTH_LONG).show();
 
         Toast.makeText(getContext(),"placa: "+getPlate(lista.getSelectedItem().toString()),Toast.LENGTH_LONG).show();
 
@@ -237,7 +240,7 @@ public class FragmentSolicitarVhiculo extends Fragment
 
     }
     public void loadVehicles(){
-        String url = "http://192.168.0.10/conexionPHPBD/loadVehicles.php?" + "user=drocampo";
+        String url = "http://192.168.0.6/loadVehicles.php?" + "user=drocampo";
 
         //esto hace que permita ingresar los datos con espacios, ejemplo: Didier Jose
         url.replace(" ", "%20");

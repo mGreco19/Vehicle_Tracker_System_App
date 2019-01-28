@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements Response.Listener
     public void iniciarSesion(View view) {
 
 
-        String url = "http://192.168.0.10/conexionPHPBD/login.php?" + "user=" + txtUser.getText().toString()
+        String url = "http://192.168.0.6/login.php?" + "user=" + txtUser.getText().toString()
                 + "&password=" + txtPassword.getText().toString();
         //esto hace que permita ingresar los datos con espacios, ejemplo: Didier Jose
         url.replace(" ", "%20");
