@@ -183,12 +183,30 @@ public class FragmentSolicitarVhiculo extends Fragment
         return vista;
     }
 
+    public String getPlate(String cadena){
+        char[] auxilar = cadena.toCharArray();
+        String plate="";
+        for(int i=0; i<auxilar.length; i++){
+            if(auxilar[i]==' '){
+                return plate;
+            }else{
+                plate+= auxilar[i];
+            }
+        }
+        return plate;
+
+    }
+
     private void cargarWebService() {
         Toast.makeText(getContext(),"La solicitud se realizó con éxito!",Toast.LENGTH_LONG).show();
 
         userRequest.setText("Usuario:  Jose Ocampo");
         vehicleRequest.setText("Vehículo: "+lista.getSelectedItem().toString());
         targetRequest.setText("Destino: "+campoDestino.getText().toString());
+
+
+        Toast.makeText(getContext(),"placa: "+getPlate(lista.getSelectedItem().toString()),Toast.LENGTH_LONG).show();
+
         if(beginHour<12){
             dateTimerequest.setText("Fecha: "+"26/01/2019  -  "+btnSelectbeginHour.getText().toString()+" am");
         }else{
