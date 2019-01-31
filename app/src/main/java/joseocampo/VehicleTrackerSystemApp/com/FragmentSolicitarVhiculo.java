@@ -29,7 +29,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 
 /**
@@ -41,11 +43,13 @@ import java.util.Calendar;
  * create an instance of this fragment.
  */
 public class FragmentSolicitarVhiculo extends Fragment
- implements   Response.Listener<JSONArray>, Response.ErrorListener{
+        implements Response.Listener<JSONArray>, Response.ErrorListener {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
+    private static  String idSolicitud = "consulta"; //Variable para determinar el tipo de transaccion a la base de datos
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -53,20 +57,20 @@ public class FragmentSolicitarVhiculo extends Fragment
 
 
     //este es un comentario de prueba para hacer commit.
-    private EditText campoDestino,campoJustificacion;
-    private Button btnRealizarSolicitd, btnSelectbeginHour,btnSelectEndHour;
-    private TextView userRequest,vehicleRequest,targetRequest,dateTimerequest;
+    private EditText campoDestino, campoJustificacion;
+    private Button btnRealizarSolicitd, btnSelectbeginHour, btnSelectEndHour;
+    private TextView userRequest, vehicleRequest, targetRequest, dateTimerequest;
 
     private Spinner lista;
     private String[] vehicles = {"Selecciona un vehículo"};
-    private String[] vehiculos = {"Vehiculos disponibles","Nissan","Toyota","Nissan Versa","Susuki","Chevrolet","Huydani"};
+    private String[] vehiculos = {"Vehiculos disponibles", "Nissan", "Toyota", "Nissan Versa", "Susuki", "Chevrolet", "Huydani"};
 
     private OnFragmentInteractionListener mListener;
     private JsonArrayRequest jsonArrayRequest;
     private RequestQueue request;
 
     //variables para guardar la hora
-    private int beginHour,beginMinutes,endHour,endMinutes;
+    private int beginHour, beginMinutes, endHour, endMinutes;
     private String vehiclePlate;
 
     //en este atributo se guarda el nombre del usuario logeado
@@ -113,27 +117,25 @@ public class FragmentSolicitarVhiculo extends Fragment
         View vista = inflater.inflate(R.layout.fragment_fragment_solicitar_vhiculo, container, false);
 
         //obtenemos el botoon para seleccionar la hora
-        btnSelectbeginHour = (Button)vista.findViewById(R.id.btnBeginHour);
-        btnSelectEndHour = (Button)vista.findViewById(R.id.btnEndHour);
+        btnSelectbeginHour = (Button) vista.findViewById(R.id.btnBeginHour);
+        btnSelectEndHour = (Button) vista.findViewById(R.id.btnEndHour);
 
 
         lista = (Spinner) vista.findViewById(R.id.vehicleList);
-        campoDestino = (EditText)vista.findViewById(R.id.campoDestino);
-        campoJustificacion = (EditText)vista.findViewById(R.id.campoJustificacion);
-        btnRealizarSolicitd = (Button)vista.findViewById(R.id.btnRealizarSolicitud);
+        campoDestino = (EditText) vista.findViewById(R.id.campoDestino);
+        campoJustificacion = (EditText) vista.findViewById(R.id.campoJustificacion);
+        btnRealizarSolicitd = (Button) vista.findViewById(R.id.btnRealizarSolicitud);
 
         //obtenemos los widgets para mostrar el estado de la solicitud de un vehiculo.
-        userRequest = (TextView)vista.findViewById(R.id.userRequest);
-        vehicleRequest = (TextView)vista.findViewById(R.id.vehicleRequest);
-        targetRequest = (TextView)vista.findViewById(R.id.targetRequest);
-        dateTimerequest = (TextView)vista.findViewById(R.id.dateTimeRequest);
-
+        userRequest = (TextView) vista.findViewById(R.id.userRequest);
+        vehicleRequest = (TextView) vista.findViewById(R.id.vehicleRequest);
+        targetRequest = (TextView) vista.findViewById(R.id.targetRequest);
+        dateTimerequest = (TextView) vista.findViewById(R.id.dateTimeRequest);
 
 
         //obtenemos el nombre del usaurio logeado
         userNameLogin = getArguments().getString("usuario");
-        Toast.makeText(getContext(),"LISTO PERRO: "+userNameLogin,Toast.LENGTH_LONG).show();
-
+        Toast.makeText(getContext(), "LISTO PERRO: " + userNameLogin, Toast.LENGTH_LONG).show();
 
 
         // colocamos este texto para indicar que la solicitud esta vacia porque no se ha solicitado ningun vehiculo.
@@ -142,7 +144,6 @@ public class FragmentSolicitarVhiculo extends Fragment
         //se llena el select de vehiculos disponibles cuando se entra a la pagina para solicitar un vehiculo..
         //ver la importancia de llenar de primero el select con los vehiculos para que el usuario puedea escoger uno de la lista.
         loadVehicles();
-
 
 
         //colocamos todos los click listeners...
@@ -163,11 +164,11 @@ public class FragmentSolicitarVhiculo extends Fragment
                 TimePickerDialog timePickerDialog = new TimePickerDialog(getContext(), new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker view, int beginHourOfDay, int minute) {
-                        btnSelectbeginHour.setText("Hora inicial:  "+beginHourOfDay+": "+minute);
+                        btnSelectbeginHour.setText("Hora inicial:  " + beginHourOfDay + ": " + minute);
                         beginHour = beginHourOfDay;
                         beginMinutes = minute;
                     }
-                },beginHour,beginMinutes,false);
+                }, beginHour, beginMinutes, false);
 
                 //mostramos el selector de la hora
                 timePickerDialog.show();
@@ -183,11 +184,11 @@ public class FragmentSolicitarVhiculo extends Fragment
                 TimePickerDialog timePickerDialog = new TimePickerDialog(getContext(), new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker view, int beginHourOfDay, int minute) {
-                        btnSelectEndHour.setText("Hora final:  "+beginHourOfDay+": "+minute);
+                        btnSelectEndHour.setText("Hora final:  " + beginHourOfDay + ": " + minute);
                         endHour = beginHourOfDay;
                         endMinutes = minute;
                     }
-                },endHour,endMinutes,false);
+                }, endHour, endMinutes, false);
 
                 //mostramos el selector de la hora
                 timePickerDialog.show();
@@ -196,20 +197,17 @@ public class FragmentSolicitarVhiculo extends Fragment
         });
 
 
-
-
-
         return vista;
     }
 
-    public String getPlate(String cadena){
+    public String getPlate(String cadena) {
         char[] auxilar = cadena.toCharArray();
-        String plate="";
-        for(int i=0; i<auxilar.length; i++){
-            if(auxilar[i]==' '){
+        String plate = "";
+        for (int i = 0; i < auxilar.length; i++) {
+            if (auxilar[i] == ' ') {
                 return plate;
-            }else{
-                plate+= auxilar[i];
+            } else {
+                plate += auxilar[i];
             }
         }
         return plate;
@@ -217,30 +215,46 @@ public class FragmentSolicitarVhiculo extends Fragment
     }
 
     private void cargarWebService() {
-        Toast.makeText(getContext(),"La solicitud se realizó con éxito!",Toast.LENGTH_LONG).show();
 
-        userRequest.setText("Usuario:  Jose Ocampo");
-        vehicleRequest.setText("Vehículo: "+lista.getSelectedItem().toString());
-        targetRequest.setText("Destino: "+campoDestino.getText().toString());
+        //esto hace que permita ingresar los datos con espacios, ejemplo: Didier Jose
 
-        Toast.makeText(getContext(),"CEDULA: "+ userNameLogin,Toast.LENGTH_LONG).show();
-        Toast.makeText(getContext(),"Inicio: "+ beginHour+":"+beginMinutes+":00",Toast.LENGTH_LONG).show();
-        Toast.makeText(getContext(),"Final: "+ endHour+":"+ endMinutes+":00",Toast.LENGTH_LONG).show();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
-        Toast.makeText(getContext(),"placa: "+getPlate(lista.getSelectedItem().toString()),Toast.LENGTH_LONG).show();
+        String fecha = simpleDateFormat.format(new Date());
 
-        if(beginHour<12){
-            dateTimerequest.setText("Fecha: "+"26/01/2019  -  "+btnSelectbeginHour.getText().toString()+" am");
-        }else{
-            dateTimerequest.setText("Fecha: "+"26/01/2019  -  "+btnSelectbeginHour.getText().toString()+" pm");
-        }
+        String url = "http://192.168.0.6/solicitarVehiculo.php?user=tony"
+                + "&cedula=" + userNameLogin
+                + "&vehicle=" + getPlate(lista.getSelectedItem().toString())
+                + "&destino=" + campoDestino.getText().toString()
+                + "&justificacion=" + campoJustificacion.getText().toString()
+                + "&dateBegin=" + fecha
+                + "&beginHour=" + beginHour + ":"+ beginMinutes + ":00"
+                + "&dateEnd=" + fecha
+                + "&endHour=" + endHour + ":" + endMinutes+ ":00";
+
+        url.replace(" ", "%20");
+        idSolicitud = "solicitud"; //Para identificar el tipo de solicitud que se esta haciendo
 
 
+
+        //esto nos permite establecer comunicacion con los metodos onErrorResponse() y onResponse().
+        ///el metodo JsonArrayRequest nos devuelve un jsonArray
+        jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null, this, this);
+
+        request = Volley.newRequestQueue(getContext());
+        //en el metodo add le enviamos la respuesta de la bd, a el metodo response.(se le envia un jsonArray..
+        request.add(jsonArrayRequest);
 
 
     }
+<<<<<<< HEAD
     public void loadVehicles(){
         String url = "http://192.168.0.10/conexionPHPBD/loadVehicles.php?" + "user=drocampo";
+=======
+
+    public void loadVehicles() {
+        String url = "http://192.168.0.6/loadVehicles.php?" + "user=drocampo";
+>>>>>>> e3ded1bf5cea6fc5ccaf217344b6e0abefae7d70
 
         //esto hace que permita ingresar los datos con espacios, ejemplo: Didier Jose
         url.replace(" ", "%20");
@@ -255,39 +269,75 @@ public class FragmentSolicitarVhiculo extends Fragment
 
 
     }
+
+
     @Override
     public void onResponse(JSONArray response) {
         //recibimos un jsonArray por parametros y en un ciclo for
         //Toast.makeText(getContext(),"Detalle del error:  "+response.toString(),Toast.LENGTH_LONG).show();
+        try {
 
-        JSONObject jsonObject = new JSONObject();
-       try {
-           //creamos un vector del tamaño de la cantidad de vehiculos disponibles..
-           vehicles = new String[response.length()];
-           //recorremos el jsonArray para obtener uno por uno cada jsonObject
-           for(int i=0; i<response.length(); i++){
-               //una vez que tenemos cada jsonObject
-               jsonObject = response.getJSONObject(i);
-               //procedemos a llenar el vector de strings con el nombre de cada vehiculo
-               vehicles [i] = jsonObject.getString("PK_License_plate")+" "+jsonObject.getString("Brand")+" "+jsonObject.getString("Model");
+            if (idSolicitud.equals("solicitud")) {
+                JSONObject jsonObject = new JSONObject();
+                jsonObject = response.getJSONObject(0);
 
-           }
+                if(jsonObject.getString("Resultado").equals("1")){
+                    Toast.makeText(getContext(), "La solicitud se realizó con éxito!", Toast.LENGTH_LONG).show();
 
-           //le mandamos el vector con los nombres de los vehiculos, placa y modelo al spinner que tenemos en la vista.
-           ArrayAdapter<String> adaptador = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item,vehicles);
+                    userRequest.setText("Usuario:  Jose Ocampo");
+                    vehicleRequest.setText("Vehículo: " + lista.getSelectedItem().toString());
+                    targetRequest.setText("Destino: " + campoDestino.getText().toString());
 
-           lista.setAdapter(adaptador);
+                    if (beginHour < 12) {
+                        dateTimerequest.setText("Fecha: " + "26/01/2019  -  " + btnSelectbeginHour.getText().toString() + " am");
+                    } else {
+                        dateTimerequest.setText("Fecha: " + "26/01/2019  -  " + btnSelectbeginHour.getText().toString() + " pm");
+                    }
+
+                }else{
+                    if(jsonObject.getString("Resultado").equals("0")){
+                        Toast.makeText(getContext(),
+                                "Ya existe un prestamo activo de " +
+                                        response.getJSONObject(1).getString("inicio")
+                                        +" hasta " + response.getJSONObject(2).getString("final")
+                                , Toast.LENGTH_LONG).show();
+
+                    }else{
+                        Toast.makeText(getContext(), "Error desconocido", Toast.LENGTH_LONG).show();
+                    }
+                }
+
+                idSolicitud = "consulta";
 
 
+            } else {
+                JSONObject jsonObject = new JSONObject();
+
+                //creamos un vector del tamaño de la cantidad de vehiculos disponibles..
+                vehicles = new String[response.length()];
+                //recorremos el jsonArray para obtener uno por uno cada jsonObject
+                for (int i = 0; i < response.length(); i++) {
+                    //una vez que tenemos cada jsonObject
+                    jsonObject = response.getJSONObject(i);
+                    //procedemos a llenar el vector de strings con el nombre de cada vehiculo
+                    vehicles[i] = jsonObject.getString("PK_License_plate") + " " + jsonObject.getString("Brand") + " " + jsonObject.getString("Model");
+
+                }
+
+                //le mandamos el vector con los nombres de los vehiculos, placa y modelo al spinner que tenemos en la vista.
+                ArrayAdapter<String> adaptador = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, vehicles);
+
+                lista.setAdapter(adaptador);
+
+            }
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
-
     }
+
     @Override
     public void onErrorResponse(VolleyError error) {
-        Toast.makeText(getContext(),"Detalle del error:  "+error.toString(),Toast.LENGTH_LONG).show();
+        Toast.makeText(getContext(), "Detalle del error:  " + error.toString(), Toast.LENGTH_LONG).show();
 
     }
 
@@ -314,8 +364,6 @@ public class FragmentSolicitarVhiculo extends Fragment
         super.onDetach();
         mListener = null;
     }
-
-
 
 
     /**
