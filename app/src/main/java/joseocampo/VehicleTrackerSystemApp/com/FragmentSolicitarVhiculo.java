@@ -240,7 +240,7 @@ public class FragmentSolicitarVhiculo extends Fragment
 
     }
     public void loadVehicles(){
-        String url = "http://192.168.0.6/loadVehicles.php?" + "user=drocampo";
+        String url = "http://192.168.0.10/conexionPHPBD/loadVehicles.php?" + "user=drocampo";
 
         //esto hace que permita ingresar los datos con espacios, ejemplo: Didier Jose
         url.replace(" ", "%20");

@@ -24,4 +24,5 @@
     <string name="seleccionar_hora">Seleccionar Hora</string>
     <string name="selecionar_hora_final">Selecionar hora final</string>
     <string name="seleccionar_hora_inicio">Seleccionar hora inicio</string>
+    <string name="todo">TODO</string>
 </resources>
